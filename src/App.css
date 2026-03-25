@@ -1,0 +1,1040 @@
+/* ===== ГЛОБАЛЬНЫЕ СТИЛИ ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: linear-gradient(135deg, #e6f7ff 0%, #b3e0ff 50%, #80c9ff 100%);
+  min-height: 100vh;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  position: relative;
+  overflow-x: hidden;
+}
+
+/* ===== МНОГО РЕАЛИСТИЧНЫХ ПУЗЫРЬКОВ ===== */
+
+/* Большие пузырьки с бликами - левая сторона */
+.bubble-big-left {
+  position: fixed;
+  bottom: -100px;
+  left: 5%;
+  width: 90px;
+  height: 90px;
+  background: radial-gradient(circle at 35% 35%, 
+    rgba(255, 255, 255, 0.96) 0%,
+    rgba(255, 255, 255, 0.72) 40%,
+    rgba(255, 255, 255, 0.32) 70%,
+    rgba(255, 255, 255, 0.1) 100%);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 0;
+  animation: floatLeft 16s infinite ease-in-out;
+  box-shadow: inset -5px -5px 12px rgba(0,0,0,0.05), inset 8px 8px 15px rgba(255,255,255,0.8);
+  filter: blur(0.5px);
+}
+
+.bubble-big-left::before {
+  content: '';
+  position: absolute;
+  top: 20%;
+  left: 25%;
+  width: 30%;
+  height: 30%;
+  background: radial-gradient(circle, rgba(255,255,255,0.9) 0%, rgba(255,255,255,0.4) 100%);
+  border-radius: 50%;
+}
+
+.bubble-big-left-2 {
+  position: fixed;
+  bottom: -150px;
+  left: 15%;
+  width: 120px;
+  height: 120px;
+  background: radial-gradient(circle at 30% 30%, 
+    rgba(255, 255, 255, 0.94) 0%,
+    rgba(255, 255, 255, 0.68) 40%,
+    rgba(255, 255, 255, 0.28) 70%,
+    rgba(255, 255, 255, 0.08) 100%);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 0;
+  animation: floatLeft 19s infinite ease-in-out reverse;
+  box-shadow: inset -3px -3px 8px rgba(0,0,0,0.03), inset 6px 6px 12px rgba(255,255,255,0.75);
+  filter: blur(0.5px);
+}
+
+.bubble-big-left-2::before {
+  content: '';
+  position: absolute;
+  top: 25%;
+  left: 20%;
+  width: 28%;
+  height: 28%;
+  background: radial-gradient(circle, rgba(255,255,255,0.88) 0%, rgba(255,255,255,0.35) 100%);
+  border-radius: 50%;
+}
+
+/* Большие пузырьки с бликами - правая сторона */
+.bubble-big-right {
+  position: fixed;
+  bottom: -80px;
+  right: 8%;
+  width: 100px;
+  height: 100px;
+  background: radial-gradient(circle at 40% 35%, 
+    rgba(255, 255, 255, 0.95) 0%,
+    rgba(255, 255, 255, 0.7) 40%,
+    rgba(255, 255, 255, 0.3) 70%,
+    rgba(255, 255, 255, 0.09) 100%);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 0;
+  animation: floatRight 17s infinite ease-in-out;
+  box-shadow: inset -4px -4px 10px rgba(0,0,0,0.04), inset 7px 7px 14px rgba(255,255,255,0.78);
+  filter: blur(0.5px);
+}
+
+.bubble-big-right::before {
+  content: '';
+  position: absolute;
+  top: 22%;
+  left: 28%;
+  width: 32%;
+  height: 32%;
+  background: radial-gradient(circle, rgba(255,255,255,0.92) 0%, rgba(255,255,255,0.38) 100%);
+  border-radius: 50%;
+}
+
+.bubble-big-right-2 {
+  position: fixed;
+  bottom: -120px;
+  right: 20%;
+  width: 85px;
+  height: 85px;
+  background: radial-gradient(circle at 33% 38%, 
+    rgba(255, 255, 255, 0.93) 0%,
+    rgba(255, 255, 255, 0.69) 40%,
+    rgba(255, 255, 255, 0.29) 70%,
+    rgba(255, 255, 255, 0.09) 100%);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 0;
+  animation: floatRight 20s infinite ease-in-out reverse;
+  box-shadow: inset -3px -3px 9px rgba(0,0,0,0.03), inset 6px 6px 13px rgba(255,255,255,0.76);
+  filter: blur(0.5px);
+}
+
+.bubble-big-right-2::before {
+  content: '';
+  position: absolute;
+  top: 23%;
+  left: 27%;
+  width: 31%;
+  height: 31%;
+  background: radial-gradient(circle, rgba(255,255,255,0.89) 0%, rgba(255,255,255,0.36) 100%);
+  border-radius: 50%;
+}
+
+/* Средние пузырьки по всей ширине */
+.bubble-medium-1 {
+  position: fixed;
+  bottom: -50px;
+  left: 25%;
+  width: 55px;
+  height: 55px;
+  background: radial-gradient(circle at 35% 35%, 
+    rgba(255, 255, 255, 0.97) 0%,
+    rgba(255, 255, 255, 0.76) 45%,
+    rgba(255, 255, 255, 0.36) 75%,
+    rgba(255, 255, 255, 0.13) 100%);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 0;
+  animation: floatCenter 14s infinite ease-in-out;
+  box-shadow: inset -3px -3px 6px rgba(0,0,0,0.03), inset 5px 5px 10px rgba(255,255,255,0.82);
+  filter: blur(0.3px);
+}
+
+.bubble-medium-1::before {
+  content: '';
+  position: absolute;
+  top: 25%;
+  left: 25%;
+  width: 35%;
+  height: 35%;
+  background: radial-gradient(circle, rgba(255,255,255,0.93) 0%, rgba(255,255,255,0.42) 100%);
+  border-radius: 50%;
+}
+
+.bubble-medium-2 {
+  position: fixed;
+  bottom: -70px;
+  left: 45%;
+  width: 65px;
+  height: 65px;
+  background: radial-gradient(circle at 30% 40%, 
+    rgba(255, 255, 255, 0.96) 0%,
+    rgba(255, 255, 255, 0.73) 45%,
+    rgba(255, 255, 255, 0.33) 75%,
+    rgba(255, 255, 255, 0.11) 100%);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 0;
+  animation: floatCenter 15s infinite ease-in-out reverse;
+  box-shadow: inset -2px -2px 5px rgba(0,0,0,0.02), inset 4px 4px 8px rgba(255,255,255,0.78);
+  filter: blur(0.3px);
+}
+
+.bubble-medium-2::before {
+  content: '';
+  position: absolute;
+  top: 28%;
+  left: 22%;
+  width: 32%;
+  height: 32%;
+  background: radial-gradient(circle, rgba(255,255,255,0.88) 0%, rgba(255,255,255,0.38) 100%);
+  border-radius: 50%;
+}
+
+.bubble-medium-3 {
+  position: fixed;
+  bottom: -60px;
+  left: 65%;
+  width: 48px;
+  height: 48px;
+  background: radial-gradient(circle at 38% 32%, 
+    rgba(255, 255, 255, 0.98) 0%,
+    rgba(255, 255, 255, 0.78) 45%,
+    rgba(255, 255, 255, 0.38) 75%,
+    rgba(255, 255, 255, 0.14) 100%);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 0;
+  animation: floatCenter 16s infinite ease-in-out;
+  box-shadow: inset -3px -3px 7px rgba(0,0,0,0.03), inset 5px 5px 9px rgba(255,255,255,0.8);
+  filter: blur(0.3px);
+}
+
+.bubble-medium-3::before {
+  content: '';
+  position: absolute;
+  top: 23%;
+  left: 27%;
+  width: 34%;
+  height: 34%;
+  background: radial-gradient(circle, rgba(255,255,255,0.9) 0%, rgba(255,255,255,0.4) 100%);
+  border-radius: 50%;
+}
+
+.bubble-medium-4 {
+  position: fixed;
+  bottom: -40px;
+  left: 80%;
+  width: 52px;
+  height: 52px;
+  background: radial-gradient(circle at 32% 37%, 
+    rgba(255, 255, 255, 0.95) 0%,
+    rgba(255, 255, 255, 0.74) 45%,
+    rgba(255, 255, 255, 0.34) 75%,
+    rgba(255, 255, 255, 0.12) 100%);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 0;
+  animation: floatCenter 13s infinite ease-in-out reverse;
+  box-shadow: inset -2px -2px 6px rgba(0,0,0,0.02), inset 4px 4px 9px rgba(255,255,255,0.79);
+  filter: blur(0.3px);
+}
+
+.bubble-medium-4::before {
+  content: '';
+  position: absolute;
+  top: 26%;
+  left: 24%;
+  width: 33%;
+  height: 33%;
+  background: radial-gradient(circle, rgba(255,255,255,0.91) 0%, rgba(255,255,255,0.41) 100%);
+  border-radius: 50%;
+}
+
+/* Маленькие пузырьки - много штук */
+.bubble-small-1 {
+  position: fixed;
+  bottom: -30px;
+  left: 12%;
+  width: 28px;
+  height: 28px;
+  background: radial-gradient(circle at 35% 35%, 
+    rgba(255, 255, 255, 0.99) 0%,
+    rgba(255, 255, 255, 0.82) 50%,
+    rgba(255, 255, 255, 0.42) 80%,
+    rgba(255, 255, 255, 0.16) 100%);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 0;
+  animation: floatSmall 11s infinite ease-in-out;
+  box-shadow: inset -2px -2px 4px rgba(0,0,0,0.02), inset 3px 3px 6px rgba(255,255,255,0.92);
+  filter: blur(0.2px);
+}
+
+.bubble-small-1::before {
+  content: '';
+  position: absolute;
+  top: 30%;
+  left: 30%;
+  width: 40%;
+  height: 40%;
+  background: radial-gradient(circle, rgba(255,255,255,0.96) 0%, rgba(255,255,255,0.52) 100%);
+  border-radius: 50%;
+}
+
+.bubble-small-2 {
+  position: fixed;
+  bottom: -25px;
+  left: 35%;
+  width: 22px;
+  height: 22px;
+  background: radial-gradient(circle at 32% 38%, 
+    rgba(255, 255, 255, 0.98) 0%,
+    rgba(255, 255, 255, 0.8) 50%,
+    rgba(255, 255, 255, 0.4) 80%,
+    rgba(255, 255, 255, 0.15) 100%);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 0;
+  animation: floatSmall 12s infinite ease-in-out reverse;
+  box-shadow: inset -1px -1px 3px rgba(0,0,0,0.01), inset 2px 2px 5px rgba(255,255,255,0.94);
+  filter: blur(0.2px);
+}
+
+.bubble-small-2::before {
+  content: '';
+  position: absolute;
+  top: 31%;
+  left: 33%;
+  width: 42%;
+  height: 42%;
+  background: radial-gradient(circle, rgba(255,255,255,0.95) 0%, rgba(255,255,255,0.5) 100%);
+  border-radius: 50%;
+}
+
+.bubble-small-3 {
+  position: fixed;
+  bottom: -35px;
+  left: 55%;
+  width: 25px;
+  height: 25px;
+  background: radial-gradient(circle at 35% 35%, 
+    rgba(255, 255, 255, 0.97) 0%,
+    rgba(255, 255, 255, 0.79) 50%,
+    rgba(255, 255, 255, 0.39) 80%,
+    rgba(255, 255, 255, 0.14) 100%);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 0;
+  animation: floatSmall 10s infinite ease-in-out;
+  box-shadow: inset -2px -2px 4px rgba(0,0,0,0.02), inset 3px 3px 6px rgba(255,255,255,0.91);
+  filter: blur(0.2px);
+}
+
+.bubble-small-3::before {
+  content: '';
+  position: absolute;
+  top: 29%;
+  left: 31%;
+  width: 41%;
+  height: 41%;
+  background: radial-gradient(circle, rgba(255,255,255,0.94) 0%, rgba(255,255,255,0.48) 100%);
+  border-radius: 50%;
+}
+
+.bubble-small-4 {
+  position: fixed;
+  bottom: -20px;
+  left: 75%;
+  width: 20px;
+  height: 20px;
+  background: radial-gradient(circle at 33% 37%, 
+    rgba(255, 255, 255, 0.99) 0%,
+    rgba(255, 255, 255, 0.83) 50%,
+    rgba(255, 255, 255, 0.43) 80%,
+    rgba(255, 255, 255, 0.17) 100%);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 0;
+  animation: floatSmall 13s infinite ease-in-out reverse;
+  box-shadow: inset -1px -1px 3px rgba(0,0,0,0.01), inset 2px 2px 5px rgba(255,255,255,0.95);
+  filter: blur(0.2px);
+}
+
+.bubble-small-4::before {
+  content: '';
+  position: absolute;
+  top: 32%;
+  left: 32%;
+  width: 43%;
+  height: 43%;
+  background: radial-gradient(circle, rgba(255,255,255,0.97) 0%, rgba(255,255,255,0.53) 100%);
+  border-radius: 50%;
+}
+
+.bubble-small-5 {
+  position: fixed;
+  bottom: -28px;
+  left: 92%;
+  width: 24px;
+  height: 24px;
+  background: radial-gradient(circle at 34% 36%, 
+    rgba(255, 255, 255, 0.96) 0%,
+    rgba(255, 255, 255, 0.78) 50%,
+    rgba(255, 255, 255, 0.38) 80%,
+    rgba(255, 255, 255, 0.13) 100%);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 0;
+  animation: floatSmall 11s infinite ease-in-out;
+  box-shadow: inset -2px -2px 4px rgba(0,0,0,0.02), inset 3px 3px 6px rgba(255,255,255,0.93);
+  filter: blur(0.2px);
+}
+
+.bubble-small-5::before {
+  content: '';
+  position: absolute;
+  top: 28%;
+  left: 30%;
+  width: 39%;
+  height: 39%;
+  background: radial-gradient(circle, rgba(255,255,255,0.92) 0%, rgba(255,255,255,0.46) 100%);
+  border-radius: 50%;
+}
+
+/* Анимации для пузырьков */
+@keyframes floatLeft {
+  0% {
+    transform: translateY(0) translateX(-20px) rotate(0deg);
+    opacity: 0;
+  }
+  10% {
+    opacity: 0.7;
+  }
+  50% {
+    transform: translateY(-45vh) translateX(15px) rotate(180deg);
+  }
+  90% {
+    opacity: 0.7;
+  }
+  100% {
+    transform: translateY(-95vh) translateX(-10px) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+@keyframes floatRight {
+  0% {
+    transform: translateY(0) translateX(20px) rotate(0deg);
+    opacity: 0;
+  }
+  10% {
+    opacity: 0.7;
+  }
+  50% {
+    transform: translateY(-50vh) translateX(-15px) rotate(180deg);
+  }
+  90% {
+    opacity: 0.7;
+  }
+  100% {
+    transform: translateY(-100vh) translateX(12px) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+@keyframes floatCenter {
+  0% {
+    transform: translateY(0) translateX(0) rotate(0deg);
+    opacity: 0;
+  }
+  10% {
+    opacity: 0.8;
+  }
+  50% {
+    transform: translateY(-60vh) translateX(8px) rotate(120deg);
+  }
+  90% {
+    opacity: 0.8;
+  }
+  100% {
+    transform: translateY(-110vh) translateX(-5px) rotate(240deg);
+    opacity: 0;
+  }
+}
+
+@keyframes floatSmall {
+  0% {
+    transform: translateY(0) translateX(0);
+    opacity: 0;
+  }
+  10% {
+    opacity: 0.9;
+  }
+  50% {
+    transform: translateY(-70vh) translateX(5px);
+  }
+  90% {
+    opacity: 0.9;
+  }
+  100% {
+    transform: translateY(-120vh) translateX(-3px);
+    opacity: 0;
+  }
+}
+
+/* Контент поверх пузырьков */
+#root, .App, main, .products-page, .info-page {
+  position: relative;
+  z-index: 1;
+}
+
+/* ===== ОСНОВНОЙ КОНТЕЙНЕР ДЛЯ ПРИЖАТИЯ FOOTER ===== */
+#root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1;
+}
+
+/* ===== ХЕДЕР ===== */
+.glass-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(12px);
+  padding: 0.75rem 0;
+  box-shadow: 0 2px 20px rgba(0, 102, 204, 0.1);
+  z-index: 100;
+}
+
+.header-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  flex-shrink: 0;
+}
+
+.logo-img {
+  width: 50px;
+  height: 50px;
+  border-radius: 12px;
+  object-fit: cover;
+  border: 2px solid #0066cc;
+  box-shadow: 0 4px 15px rgba(0, 102, 204, 0.3);
+}
+
+.logo-text {
+  font-size: 1.4rem;
+  font-weight: 800;
+  background: linear-gradient(135deg, #0066cc, #0099ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.nav-menu {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.nav-link {
+  padding: 10px 24px;
+  transition: all 0.3s ease;
+  color: #2c3e50 !important;
+  font-weight: 600;
+  font-size: 1rem;
+  text-decoration: none;
+  border-radius: 50px;
+  background: transparent;
+  white-space: nowrap;
+}
+
+.nav-link:hover {
+  background: rgba(0, 102, 204, 0.1);
+  color: #0066cc !important;
+}
+
+.nav-active {
+  background: linear-gradient(135deg, #0066cc, #0099ff);
+  color: white !important;
+  box-shadow: 0 4px 15px rgba(0, 102, 204, 0.3);
+}
+
+/* ===== ФУТЕР (внизу страницы) ===== */
+.glass-footer {
+  width: 100%;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  margin-top: auto;
+  padding: 1.5rem 0;
+  position: relative;
+  z-index: 1;
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  text-align: center;
+}
+
+.footer-copyright {
+  color: #0066cc;
+  font-weight: 500;
+  margin-bottom: 0.25rem;
+  font-size: 0.9rem;
+}
+
+.footer-phone {
+  color: #2c3e50;
+  font-size: 0.85rem;
+}
+
+/* ===== СТРАНИЦА ТОВАРОВ ===== */
+.products-page {
+  min-height: calc(100vh - 100px);
+  padding-top: 100px;
+  padding-bottom: 60px;
+}
+
+.products-header {
+  text-align: center;
+  margin-bottom: 3rem;
+  padding: 0 1rem;
+}
+
+.hero-title {
+  font-size: 3rem;
+  font-weight: 800;
+  background: linear-gradient(135deg, #0066cc, #0099ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 1rem;
+}
+
+.products-subtitle {
+  font-size: 1.2rem;
+  color: #2c3e50;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.products-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+.product-card {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(8px);
+  border-radius: 24px;
+  padding: 2rem;
+  text-align: center;
+  transition: all 0.3s ease;
+  border: 1px solid rgba(0, 102, 204, 0.2);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.05);
+}
+
+.product-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(0, 102, 204, 0.15);
+  border-color: rgba(0, 102, 204, 0.4);
+}
+
+.product-title {
+  font-size: 1.8rem;
+  font-weight: 700;
+  background: linear-gradient(135deg, #0066cc, #0099ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 1.5rem;
+}
+
+.product-image-wrapper {
+  width: 280px;
+  height: 280px;
+  margin: 0 auto 1.5rem;
+  overflow: hidden;
+  border-radius: 20px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+.product-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.product-card:hover .product-image {
+  transform: scale(1.05);
+}
+
+.product-description {
+  color: #2c3e50;
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+  text-align: center;
+  padding: 0 0.5rem;
+}
+
+.product-buttons {
+  display: flex;
+  flex-direction: row;
+  gap: 0.8rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.market-btn {
+  padding: 10px 24px;
+  border-radius: 30px;
+  font-weight: 600;
+  color: white;
+  transition: all 0.3s ease;
+  font-size: 0.9rem;
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.market-btn:hover {
+  transform: translateY(-2px);
+  filter: brightness(1.05);
+  color: white;
+  text-decoration: none;
+}
+
+.wb-btn {
+  background: linear-gradient(135deg, #a52a5e, #6a1b3a);
+  box-shadow: 0 4px 12px rgba(165, 42, 94, 0.3);
+}
+
+.ozon-btn {
+  background: linear-gradient(135deg, #005bff, #0040b3);
+  box-shadow: 0 4px 12px rgba(0, 91, 255, 0.3);
+}
+
+.yam-btn {
+  background: linear-gradient(135deg, #fc3f1d, #cc2b0a);
+  box-shadow: 0 4px 12px rgba(252, 63, 29, 0.3);
+}
+
+/* ===== СТРАНИЦА ИНФОРМАЦИИ (КАРТОЧКИ НАВЕРХУ) ===== */
+.info-page {
+  min-height: calc(100vh - 100px);
+  padding-top: 100px;
+  padding-bottom: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.info-header {
+  text-align: center;
+  margin-bottom: 2rem;
+  width: 100%;
+}
+
+.info-header .hero-title {
+  margin-bottom: 0;
+}
+
+.info-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  max-width: 1000px;
+  width: 100%;
+  margin: 0;
+  padding: 0 1.5rem;
+}
+
+.info-card {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(8px);
+  border-radius: 24px;
+  padding: 1.5rem;
+  text-align: center;
+  transition: all 0.3s ease;
+  border: 1px solid rgba(0, 102, 204, 0.2);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.05);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.info-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 35px rgba(0, 102, 204, 0.1);
+}
+
+.info-icon {
+  width: 70px;
+  height: 70px;
+  background: linear-gradient(135deg, #0066cc, #0099ff);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1rem;
+  font-size: 2rem;
+  box-shadow: 0 8px 20px rgba(0, 102, 204, 0.3);
+}
+
+.info-card-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #0066cc;
+  margin-bottom: 0.75rem;
+}
+
+.info-contact {
+  font-size: 1.1rem;
+  color: #2c3e50;
+  margin-bottom: 0.25rem;
+}
+
+.info-phone {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #0066cc;
+  text-decoration: none;
+  display: inline-block;
+  margin-top: 0.25rem;
+}
+
+.info-text {
+  color: #2c3e50;
+  font-size: 1rem;
+  margin: 0.25rem 0;
+}
+
+.info-badge {
+  display: inline-block;
+  background: linear-gradient(135deg, #0066cc, #0099ff);
+  color: white;
+  padding: 0.4rem 1.2rem;
+  border-radius: 30px;
+  font-weight: 600;
+  margin-top: 0.75rem;
+  font-size: 0.9rem;
+}
+
+.info-tags {
+  display: flex;
+  gap: 0.75rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 0.75rem;
+}
+
+.info-tag {
+  background: rgba(0, 102, 204, 0.1);
+  color: #0066cc;
+  padding: 0.4rem 1rem;
+  border-radius: 30px;
+  font-weight: 500;
+  font-size: 0.9rem;
+}
+
+/* ===== МОБИЛЬНАЯ АДАПТАЦИЯ ===== */
+@media (max-width: 768px) {
+  .header-container {
+    padding: 0 1rem;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .nav-menu {
+    position: static;
+    transform: none;
+    gap: 1rem;
+  }
+  
+  .nav-link {
+    padding: 8px 16px;
+    font-size: 0.9rem;
+  }
+  
+  .products-container {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    padding: 0 1rem;
+  }
+  
+  .product-card {
+    padding: 1.5rem;
+  }
+  
+  .product-title {
+    font-size: 1.4rem;
+  }
+  
+  .product-image-wrapper {
+    width: 220px;
+    height: 220px;
+  }
+  
+  .hero-title {
+    font-size: 2rem;
+  }
+  
+  .products-subtitle {
+    font-size: 1rem;
+    padding: 0 1rem;
+  }
+  
+  .logo-text {
+    font-size: 1.2rem;
+  }
+  
+  .logo-img {
+    width: 40px;
+    height: 40px;
+  }
+  
+  .info-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    padding: 0 1rem;
+    max-width: 400px;
+  }
+  
+  .info-card {
+    padding: 1.2rem;
+  }
+  
+  .info-icon {
+    width: 60px;
+    height: 60px;
+    font-size: 1.8rem;
+  }
+  
+  .info-card-title {
+    font-size: 1.3rem;
+  }
+  
+  .product-buttons {
+    flex-direction: column;
+    gap: 0.6rem;
+  }
+  
+  .market-btn {
+    text-align: center;
+  }
+  
+  .footer-container {
+    padding: 0 1rem;
+  }
+  
+  .info-page {
+    padding-top: 120px;
+    padding-bottom: 30px;
+  }
+  
+  .products-page {
+    padding-top: 120px;
+  }
+}
+
+@media (max-width: 480px) {
+  .product-description {
+    font-size: 0.9rem;
+  }
+}
+
+/* Добавьте этот блок в конец App.css */
+
+/* Добавьте или замените эти стили в App.css */
+
+/* ===== СТИЛИ ДЛЯ ТЕКСТА С РАСКРЫТИЕМ ===== */
+.product-description-wrapper {
+  width: 100%;
+  margin-bottom: 1rem;
+}
+
+.product-description {
+  color: #2c3e50;
+  font-size: 1rem;
+  line-height: 1.6;
+  text-align: center;
+  padding: 0 0.5rem;
+  margin: 0;
+}
+
+.expand-text {
+  color: #0066cc;
+  cursor: pointer;
+  font-weight: 500;
+  transition: opacity 0.2s ease;
+  display: inline-block;
+}
+
+.expand-text:hover {
+  opacity: 0.7;
+  text-decoration: underline;
+}
+
+.collapse-text {
+  color: #0066cc;
+  cursor: pointer;
+  font-weight: 500;
+  transition: opacity 0.2s ease;
+  display: inline-block;
+  text-align: center;
+  width: 100%;
+  margin-top: 0.5rem;
+}
+
+.collapse-text:hover {
+  opacity: 0.7;
+  text-decoration: underline;
+}
+
+/* Мобильная адаптация */
+@media (max-width: 768px) {
+  .product-description {
+    font-size: 0.9rem;
+  }
+  
+  .expand-text, .collapse-text {
+    font-size: 0.9rem;
+  }
+}
